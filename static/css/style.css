@@ -110,6 +110,8 @@ h4 {
     text-align: center;
     padding: 120px 40px;
     background-color: #f0f4ff;
+    position: relative;
+    overflow: hidden;
 }
 
 .badge {
@@ -127,11 +129,13 @@ h4 {
 }
 
 .hero h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     color: var(--text-dark);
-    max-width: 1000px;
+    max-width: 750px;
     margin-bottom: 24px;
-    line-height: 1.0;
+    line-height: 1;
+    position: relative;
+    z-index: 10;
 }
 
 .hero h1 span {
@@ -144,6 +148,8 @@ h4 {
     max-width: 650px;
     margin-bottom: 56px;
     font-weight: 400;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-actions {
@@ -151,6 +157,8 @@ h4 {
     align-items: center;
     gap: 24px;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
 }
 
 .btn-cta {
@@ -179,12 +187,14 @@ h4 {
 /* Floating Cards Simplified */
 .floating-card {
     position: absolute;
-    width: 320px;
+    width: 240px;
     background-color: #ffffff;
-    padding: 14px;
-    border-radius: 36px;
+    padding: 12px;
+    border-radius: 28px;
     border: 1px solid #e5e7eb;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    z-index: 1;
 }
 
 .floating-card img {
@@ -199,15 +209,15 @@ h4 {
 .card-label {
     display: none;
 }
-
 .card-left {
-    left: 40px;
-    top: 50%;
+    left: 30px;
+    top: 58%;
+    transform: translateY(-50%);
 }
 
 .card-right {
-    right: 40px;
-    bottom: 15%;
+    right: 30px;
+    top: 22%;
 }
 
 
@@ -518,7 +528,11 @@ h4 {
 }
 
 /* Mobile Responsiveness Improvements */
-
+@media (max-width: 1400px) {
+    .floating-card {
+        display: none;
+    }
+}
 @media (max-width: 1200px) {
     .navbar {
         padding: 12px 40px;
@@ -592,8 +606,9 @@ h4 {
     }
 
     .hero h1 {
-        font-size: 2.8rem;
-    }
+    font-size: 2.3rem;
+    line-height: 1.1;
+}
 
     .hero p {
         font-size: 1rem;
